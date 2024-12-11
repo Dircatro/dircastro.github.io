@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cotação de Transporte Marítimo</title>
+</head>
+<body>
+    <header>
+        <img src="logo-spring-logistic.png" alt="Logo Spring-Logistic Int." style="width:200px;">
+    </header>
+    <h1>Formulário de Cotação de Transporte Marítimo</h1>
+    <form id="cotacaoForm">
+        <fieldset>
+            <legend>Informações da Carga</legend>
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" name="peso" required><br><br>
+
+            <label for="dimensoes">Dimensões (C x L x A em cm):</label>
+            <input type="text" id="dimensoes" name="dimensoes" placeholder="Ex.: 100x50x30" required><br><br>
+
+            <label for="quantidadeVolumes">Quantidade de Volumes:</label>
+            <input type="number" id="quantidadeVolumes" name="quantidadeVolumes" required><br><br>
+
+            <label for="valorItens">Valor Total dos Itens (USD):</label>
+            <input type="number" id="valorItens" name="valorItens" required><br><br>
+
+            <label for="incoterms">Incoterms:</label>
+            <select id="incoterms" name="incoterms" required>
+                <option value="FOB">FOB</option>
+                <option value="CIF">CIF</option>
+                <option value="EXW">EXW</option>
+                <option value="DAP">DAP</option>
+            </select><br><br>
+
+            <label for="container">Quantidade e Tipo de Container:</label>
+            <input type="text" id="container" name="container" placeholder="Ex.: 1x20' ou 1x40'" required><br><br>
+
+            <label for="tipoProduto">Tipo de Produto:</label>
+            <input type="text" id="tipoProduto" name="tipoProduto" required><br><br>
+
+            <label for="ncm">NCM:</label>
+            <input type="text" id="ncm" name="ncm" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados do Remetente</legend>
+            <label for="nomeRemetente">Nome:</label>
+            <input type="text" id="nomeRemetente" name="nomeRemetente" required><br><br>
+
+            <label for="enderecoRemetente">Endereço:</label>
+            <input type="text" id="enderecoRemetente" name="enderecoRemetente" required><br><br>
+
+            <label for="paisRemetente">País:</label>
+            <input type="text" id="paisRemetente" name="paisRemetente" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados do Destinatário</legend>
+            <label for="nomeDestinatario">Nome:</label>
+            <input type="text" id="nomeDestinatario" name="nomeDestinatario" required><br><br>
+
+            <label for="enderecoDestinatario">Endereço:</label>
+            <input type="text" id="enderecoDestinatario" name="enderecoDestinatario" required><br><br>
+
+            <label for="paisDestinatario">País:</label>
+            <input type="text" id="paisDestinatario" name="paisDestinatario" required>
+        </fieldset>
+
+        <button type="submit">Enviar Cotação</button>
+    </form>
+
+    <script>
+        document.getElementById('cotacaoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Formulário enviado com sucesso!');
+        });
+    </script>
+</body>
+</html>
